@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MoodCalendar.console": {
+      "commandName": "Project"
+    }
+    
+  }
+}
