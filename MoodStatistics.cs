@@ -27,7 +27,7 @@ namespace MoodCalendar
                 .GroupBy(e => e.Mood)
                 .OrderByDescending(g => g.Count());
 
-            Console.WriteLine("📊 Статистика на настроенията:\n");
+            Console.WriteLine(" Статистика на настроенията:\n");
             foreach (var group in grouped)
             {
                 Console.WriteLine($"{group.Key}: {group.Count()} дни");

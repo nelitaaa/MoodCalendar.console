@@ -40,5 +40,19 @@ namespace MoodCalendar
             entries = JsonSerializer.Deserialize<Dictionary<DateTime, MoodEntry>>(json)
                       ?? new Dictionary<DateTime, MoodEntry>();
         }
+        public MoodEntry GetEntry(DateTime date)
+        {
+            return entries.TryGetValue(date, out var entry) ? entry : null;
+        }
+        public void RemoveEntry(DateTime date)
+        {
+            if (entries.ContainsKey(date))
+                entries.Remove(date);
+        }
+        public string GetMood(DateTime date)
+        {
+            return entries.ContainsKey(date) ? entries[date].Mood : string.Empty;
+        }
+
     }
 }
